@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<title>Admin</title>
+	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
+	<link rel="icon" href="img/icons/favicon.png" type="image/x-icon" />
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+	<script src="js/plugin/webfont/webfont.min.js"></script>
+	<link href="css/fonts.min.css" rel="stylesheet" type="text/css">
+	<!-- CSS Files -->
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/datatables.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/mq.css">
+
+</head>
+
+<body>
+
+	<header>
+		<nav class="navbar navbar-light fixed-top container-fluid shadow">
+			<div class="sidebar-menu">
+				<button type="button" name="button" class="btn button-icon" id="toggle-btn-sidebar">
+					<span class="material-icons-outlined">
+						menu
+					</span>
+				</button>
+				<a class="navbar-brand" href="#">
+					<img src="img/logos/imagotipo-bee.png" alt="imagotipo bee cloud">
+				</a>
+			</div>
+			<div class="dropdown hidden-caret">
+			  <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+					Nicolas Latifi
+					<span class="material-icons-outlined">
+						expand_more
+					</span>
+			  </button>
+			  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
+			    <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#modalCambiarContra">Cambiar contraseña</a></li>
+			    <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+			  </ul>
+			</div>
+		</nav>
+
+	</header>
+
+	<main class="main-admin">
+		<!-- Sidebar -->
+		<div class="sidebar-admin" id="sidebar-admin">
+			<ul class="sidebar-admin-list">
+				<li class="item-sidebar">
+					<button class="btn btn-toggle collapsed showDashboard active-item-sidebar active">
+						Dashboard
+					</button>
+				</li>
+				<li class="item-sidebar">
+					<button class="btn btn-toggle collapsed btn-icon-sidebar" data-bs-toggle="collapse" data-bs-target="#admin-collapse" aria-expanded="true">
+						Administración
+						<span class="material-icons-outlined">
+							expand_more
+						</span>
+					</button>
+					<div class="collapse" id="admin-collapse">
+						<ul class="btn-toggle-nav sidebar-list-collapse">
+							<li><a href="#" class="item-collapse rounded showAdmninistracionUsuarios">Usuarios</a></li>
+							<li><a href="#" class="item-collapse rounded showAdministracionEmpresas">Empresas</a></li>
+							<li><a href="#" class="item-collapse rounded showAdministracionSedes">Sedes</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="item-sidebar">
+					<button class="btn btn-toggle collapsed btn-icon-sidebar" data-bs-toggle="collapse" data-bs-target="#operation-collapse" aria-expanded="true">
+						Operaciones
+						<span class="material-icons-outlined">
+							expand_more
+						</span>
+					</button>
+					<div class="collapse" id="operation-collapse">
+						<ul class="btn-toggle-nav sidebar-list-collapse">
+							<li><a href="#" class="item-collapse rounded showOperacionesCompras">Compras</a></li>
+							<li><a href="#" class="item-collapse rounded showOperacionesVentaVirtual">Venta Virtual</a></li>
+							<li><a href="#" class="item-collapse rounded showOperacionesControlVenta">Control Venta</a></li>
+						</ul>
+					</div>
+				</li>
+				<li class="item-sidebar">
+					<button class="btn btn-toggle collapsed btn-icon-sidebar" data-bs-toggle="collapse" data-bs-target="#reports-collapse" aria-expanded="true">
+						Reportes
+						<span class="material-icons-outlined">
+							expand_more
+						</span>
+					</button>
+					<div class="collapse show-" id="reports-collapse">
+						<ul class="btn-toggle-nav sidebar-list-collapse">
+							<li><a href="#" class="item-collapse rounded showReporteStockDisponible">Stock Disponible</a></li>
+							<li><a href="#" class="item-collapse rounded showReporteVentaInHouse">Venta In House </a></li>
+							<li><a href="#" class="item-collapse rounded showReporteCierrePromotor">Cierre Promotor</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<!-- end sidebar -->
+
+		<!-- Main panel -->
+		<div class="admin-panel ml-panel" id="admin-panel">
+			<div class="panel active-panel" id="dashboard-panel">
+				<div class="header-panel">
+					<h1>Dashboard</h1>
+				</div>
+
+				<div class="row row-cols-1 row-cols-md-2 g-4">
+					<div class="col">
+						<div class="card card-chart">
+							<div class="card-body">
+								<h4 class="card-title">Line chart</h4>
+								<canvas id="barChartExample"></canvas>
+							</div>
+						</div>
+				  </div>
+
+					<div class="col">
+						<div class="card card-chart">
+							<div class="card-body">
+								<h4 class="card-title">Pie chart</h4>
+								<canvas id="pieChartExample"></canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="panel" id="usuarios-panel">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="action-btns">
+							<button type="button" name="button" class="btn button-outline-icon" data-bs-toggle="modal" data-bs-target="#modalFiltrarUsuarios">
+								<span class="material-icons-outlined">
+									filter_list
+								</span>
+								Filtrar
+							</button>
+
+							<button type="button" name="button" class="btn button-primary showCrearUsuarios">
+								Agregar usuario
+							</button>
+						</div>
+					</div>
+
+					<div class="col-lg-12">
+						<div class="card-dtable">
+						<div class="card-dtable-header">
+							<div class="title-dtable">
+								Usuarios
+							</div>
+							<button type="button" name="button" class="btn button-outline-icon d-none">
+								<span class="material-icons-outlined">
+									download
+								</span>
+								Generar reporte
+							</button>
+						</div>
+						<table class="table table-hover" id="tableUsuarios">
+						  <thead>
+						    <tr>
+						      <th scope="col">#</th>
+						      <th scope="col">Usuario</th>
+						      <th scope="col">Nombre</th>
+						      <th scope="col">Estado</th>
+									<th scope="col">Acciones</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <th scope="row">1</th>
+						      <td>mbicerra</td>
+						      <td>Mónica Bicerra</td>
+						      <td><span class="tag-status tag-active">Activo</span></td>
+									<td class="action-cell">
+										<button type="button" name="button" class="btn button-icon button-icon-sm">
+											<span class="material-icons-outlined">
+												edit
+											</span>
+										</button>
+										<button type="button" name="button" class="btn button-icon button-icon-sm" data-bs-toggle="modal" data-bs-target="#modalActivarUsuario">
+											<span class="material-icons-outlined">
+												delete
+											</span>
+										</button>
+									</td>
+						    </tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>rarriaga</td>
+									<td>Roberto Arriaga</td>
+									<td><span class="tag-status tag-active">Activo</span></td>
+									<td class="action-cell">
+										<button type="button" name="button" class="btn button-icon button-icon-sm">
+											<span class="material-icons-outlined">
+												edit
+											</span>
+										</button>
+										<button type="button" name="button" class="btn button-icon button-icon-sm" data-bs-toggle="modal" data-bs-target="#modalActivarUsuario">
+											<span class="material-icons-outlined">
+												delete
+											</span>
+										</button>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">3</th>
+									<td>nbendezu</td>
+									<td>Natalie Bendezu</td>
+									<td><span class="tag-status tag-active">Activo</span></td>
+									<td class="action-cell">
+										<button type="button" name="button" class="btn button-icon button-icon-sm">
+											<span class="material-icons-outlined">
+												edit
+											</span>
+										</button>
+										<button type="button" name="button" class="btn button-icon button-icon-sm" data-bs-toggle="modal" data-bs-target="#modalActivarUsuario">
+											<span class="material-icons-outlined">
+												delete
+											</span>
+										</button>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">4</th>
+									<td>ealiaga</td>
+									<td>Erick Aliaga</td>
+									<td><span class="tag-status tag-inactive">Inactivo</span></td>
+									<td class="action-cell">
+										<button type="button" name="button" class="btn button-icon button-icon-sm">
+											<span class="material-icons-outlined">
+												edit
+											</span>
+										</button>
+										<button type="button" name="button" class="btn button-icon button-icon-sm" data-bs-toggle="modal" data-bs-target="#modalActivarUsuario">
+											<span class="material-icons-outlined">
+												delete
+											</span>
+										</button>
+									</td>
+								</tr>
+								<tr>
+									<th scope="row">5</th>
+									<td>rnavarro</td>
+									<td>Randy Navarro</td>
+									<td><span class="tag-status tag-inactive">Inctivo</span></td>
+									<td class="action-cell">
+										<button type="button" name="button" class="btn button-icon button-icon-sm">
+											<span class="material-icons-outlined">
+												edit
+											</span>
+										</button>
+										<button type="button" name="button" class="btn button-icon button-icon-sm" data-bs-toggle="modal" data-bs-target="#modalActivarUsuario">
+											<span class="material-icons-outlined">
+												delete
+											</span>
+										</button>
+									</td>
+								</tr>
+
+
+						  </tbody>
+						</table>
+					</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="panel" id="crearUsuarios-panel">
+				<nav aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item showAdmninistracionUsuarios"><a href="#" class="button-link">Usuarios</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Agregar Usuario</li>
+					</ol>
+				</nav>
+
+				<div class="row">
+					<div class="col-xl-4 col-lg-6 mx-auto">
+						<div class="card mx-auto">
+							<div class="card-header">
+								<h2>
+									Agregar Usuario
+								</h2>
+							</div>
+							<div class="card-body">
+								<form action="">
+									<fieldset class="fieldset-form">
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="radioTypeUser" id="radioTypeUserInhouse">
+											<label class="form-check-label" for="radioTypeUserInhouse">
+												Usuario In House
+											</label>
+										</div>
+										<div class="form-check">
+											<input class="form-check-input" type="radio" name="radioTypeUser" id="radioTypeUserAdmin">
+											<label class="form-check-label" for="radioTypeUserAdmin">
+												Usuario Administrador
+											</label>
+										</div>
+									</fieldset>
+									<fieldset class="fieldset-form fieldset-hide" id="fieldset-userInhouse">
+										<form>
+											<div class="form-group">
+												<label for="inputUserInhouseNew" class="form-label">Usuario</label>
+												<input type="text" class="form-control" id="inputUserInhouseNew" placeholder="Alias de usuario">
+											</div>
+											<div class="form-group">
+												<label for="inputNameUserInhouseNew" class="form-label">Nombre Usuario</label>
+												<input type="text" class="form-control" id="inputNameUserInhouseNew" placeholder="Nombre del usuario">
+											</div>
+											<div class="form-group">
+												<label for="inputSerieUserInhouseNew" class="form-label">Serie documento</label>
+												<input type="text" class="form-control" id="inputSerieUserInhouseNew" placeholder="Número de serie">
+											</div>
+											<button type="button" name="button" class="btn button-outline" data-bs-toggle="modal" data-bs-target="#modalPermisosModulosInhouseUser">Administrar permisos Inhouse</button>
+										</form>
+									</fieldset>
+									<fieldset class="fieldset-form fieldset-hide" id="fieldset-userAdmin">
+										<div class="wrap-options-userAdmin">
+											<div class="form-check">
+												<input class="form-check-input selectFalse" type="checkbox" value="" name="userAdminType" id="checkUserCloud">
+												<label class="form-check-label" for="checkUserCloud">
+													Usuario Cloud
+												</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input selectFalse" type="checkbox" value="" name="userAdminType" id="checkUserValidador">
+												<label class="form-check-label" for="checkUserValidador">
+													Usuario Validador
+												</label>
+											</div>
+										</div>
+
+										<form>
+											<div class="form-group">
+												<label for="inputUserAdminNew" class="form-label">Usuario</label>
+												<input type="text" class="form-control" id="inputUserAdminNew" placeholder="Alias de usuario">
+											</div>
+											<div class="form-group">
+												<label for="inputNameUserAdminNew" class="form-label">Nombre</label>
+												<input type="text" class="form-control" id="inputNameUserAdminNew" placeholder="Ingrese nombre">
+											</div>
+											<div class="form-group">
+												<label for="inputNameUserAdminNew" class="form-label">Apellido Paterno</label>
+												<input type="text" class="form-control" id="inputNameUserAdminNew" placeholder="Ingrese apellido">
+											</div>
+										</form>
+									</fieldset>
+									<fieldset class="fieldset-form fieldset-hide" id="fieldset-formNewUserCloud">
+										<form>
+											<button type="button" name="button" class="btn button-outline" data-bs-toggle="modal" data-bs-target="#modalPermisosModulosAdminUser">
+												Administrar permisos Cloud
+											</button>
+										</form>
+									</fieldset>
+									<fieldset class="fieldset-form fieldset-hide" id="fieldset-formNewUserValidador">
+										<div class="form-check form-switch">
+											<input class="form-check-input" type="checkbox" role="switch" id="switchCheckUserValidadorMaestro">
+											<label class="form-check-label" for="switchCheckUserValidadorMaestro">Usuario Validador Maestro</label>
+										</div>
+									</fieldset>
+								</form>
+							</div>
+							<div class="card-footer">
+								<button type="button" name="button" class="btn button-ghost showAdmninistracionUsuarios">Cerrar</button>
+								<button type="button" name="button" class="btn button-primary" data-bs-toggle="modal" data-bs-target="#modalSuccess">Guardar</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- End main panel -->
+
+	</main>
+
+
+
+
+
+	<!-- Modals -->
+
+	<!-- Modal -->
+		<div class="modal fade" id="modalFiltrarUsuarios" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Filtrar Usuarios</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label for="inputUser" class="form-label">Usuario</label>
+								<input type="text" class="form-control" id="inputUser" placeholder="Ingrese nombre de usuario">
+							</div>
+							<div class="form-group">
+								<label for="inputUser" class="form-label">Estado</label>
+								<select class="form-select" aria-label="Default select example">
+									<option selected>Activo</option>
+									<option>Inactivo</option>
+								</select>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn button-ghost" data-bs-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn button-primary">Filtrar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalActivarUsuario" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Activar Usuario</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						¿Desea activar el usaurio?
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn button-ghost" data-bs-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn button-primary">Confirmar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalCambiarContra" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Cambio de Contraseña</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="form-group">
+								<label for="inputUser" class="form-label">Usuario</label>
+								<input type="text" class="form-control" id="inputUser" value="nlatifi" disabled>
+							</div>
+							<div class="form-group">
+								<label for="inputUserName" class="form-label">Nombre</label>
+								<input type="text" class="form-control" id="inputUserName" value="Nicolas Latifi" disabled>
+							</div>
+							<div class="form-group">
+								<label for="inputUserPassword" class="form-label">Contraseña</label>
+								<input type="password" class="form-control" id="inputUserPassword" value="123456">
+							</div>
+							<div class="form-group">
+								<label for="inputUserPasswordNew" class="form-label">Nueva Contraseña</label>
+								<input type="password" class="form-control" id="inputUserPasswordNew">
+							</div>
+							<div class="form-group">
+								<label for="inputUserPasswordNewConfirm" class="form-label">Pepetir Nueva Contraseña</label>
+								<input type="password" class="form-control" id="inputUserPasswordNewConfirm">
+							</div>
+
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn button-ghost" data-bs-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn button-primary">Guardar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalPermisosModulosAdminUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Administrar Permisos Cloud</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<div class="accordion accordion-checkbox" id="accordionPermisosModulos">
+							<div class="accordion-item">
+						  	<div class="accordion-header" id="headingZero">
+						  		<div class="form-check">
+						  			<input class="form-check-input selectAllCheckboxesDashboard" type="checkbox" value="" id="selectAllModulosDashboard" checked>
+						  			<label class="form-check-label" for="selectAllModulosDashboard">
+						  				Dashboard
+						  			</label>
+						  		</div>
+						  		<button class="accordion-button accordion-button-not" type="button" data-bs-toggle="collapse" data-bs-target="#collapseZeroPermisosModulos" aria-expanded="true" aria-controls="collapseZeroPermisosModulos"></button>
+						  	</div>
+						  </div>
+
+						  <div class="accordion-item">
+						  	<div class="accordion-header" id="headingOne">
+						  		<div class="form-check">
+						  			<input class="form-check-input selectAllCheckboxesAdministracion" type="checkbox" value="" id="selectAllModulosAdministracion" checked>
+						  			<label class="form-check-label" for="selectAllModulosAdministracion">
+						  				Administración
+						  			</label>
+						  		</div>
+						  		<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOnePermisosModulos" aria-expanded="true" aria-controls="collapseOnePermisosModulos"></button>
+						  	</div>
+						  	<div id="collapseOnePermisosModulos" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionPermisosModulos">
+						  		<div class="accordion-body">
+						  			<ul class="mb-0">
+						  				<div class="form-check">
+						  					<input class="form-check-input selectAllCheckboxesAdministracion" type="checkbox" value="" id="checkAdminModuleOption1" checked>
+						  					<label class="form-check-label" for="checkAdminModuleOption1">
+						  						Usuario
+						  					</label>
+						  				</div>
+						  				<div class="form-check">
+						  					<input class="form-check-input selectAllCheckboxesAdministracion" type="checkbox" value="" id="checkAdminModuleOption2" checked>
+						  					<label class="form-check-label" for="checkAdminModuleOption2">
+						  						Ejecutivo
+						  					</label>
+						  				</div>
+						  				<div class="form-check">
+						  					<input class="form-check-input selectAllCheckboxesAdministracion" type="checkbox" value="" id="checkAdminModuleOption3" checked>
+						  					<label class="form-check-label" for="checkAdminModuleOption3">
+						  						Empresa
+						  					</label>
+						  				</div>
+						  				<div class="form-check">
+						  					<input class="form-check-input selectAllCheckboxesAdministracion" type="checkbox" value="" id="checkAdminModuleOption4" checked>
+						  					<label class="form-check-label" for="checkAdminModuleOption4">
+						  						Sede
+						  					</label>
+						  				</div>
+						  				<div class="form-check">
+						  					<input class="form-check-input selectAllCheckboxesAdministracion" type="checkbox" value="" id="checkAdminModuleOption5" checked>
+						  					<label class="form-check-label" for="checkAdminModuleOption5">
+						  						Programaciones
+						  					</label>
+						  				</div>
+						  				<div class="form-check">
+						  					<input class="form-check-input selectAllCheckboxesAdministracion" type="checkbox" value="" id="checkAdminModuleOption6" checked>
+						  					<label class="form-check-label" for="checkAdminModuleOption6">
+						  						Producto
+						  					</label>
+						  				</div>
+						  				<div class="form-check">
+						  					<input class="form-check-input selectAllCheckboxesAdministracion" type="checkbox" value="" id="checkAdminModuleOption7" checked>
+						  					<label class="form-check-label" for="checkAdminModuleOption7">
+						  						Cliente
+						  					</label>
+						  				</div>
+						  			</ul>
+						  		</div>
+						  	</div>
+						  </div>
+
+						  <div class="accordion-item">
+						  	<div class="accordion-header" id="headingTwo">
+						  		<div class="form-check">
+						  			<input class="form-check-input selectAllCheckboxesOperaciones" type="checkbox" value="" id="selectAllModulosOperaciones" checked>
+						  			<label class="form-check-label" for="selectAllModulosOperaciones">
+						  				Operaciones
+						  			</label>
+						  		</div>
+						  		<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwoPermisosModulos" aria-expanded="true" aria-controls="collapseTwoPermisosModulos"></button>
+						  	</div>
+						  	<div id="collapseTwoPermisosModulos" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionPermisosModulos">
+						  		<div class="accordion-body">
+						  			<ul class="mb-0">
+						  				<div class="form-check">
+						  					<input class="form-check-input selectAllCheckboxesOperaciones" type="checkbox" value="" id="checkOperationModuleOption1" checked>
+						  					<label class="form-check-label" for="checkOperationModuleOption1">
+						  						Compra
+						  					</label>
+						  				</div>
+						  				<div class="form-check">
+						  					<input class="form-check-input selectAllCheckboxesOperaciones" type="checkbox" value="" id="checkOperationModuleOption2" checked>
+						  					<label class="form-check-label" for="checkOperationModuleOption2">
+						  						Venta virtual
+						  					</label>
+						  				</div>
+						  				<div class="form-check">
+						  					<input class="form-check-input selectAllCheckboxesOperaciones" type="checkbox" value="" id="checkOperationModuleOption3" checked>
+						  					<label class="form-check-label" for="checkOperationModuleOption3">
+						  						Control venta
+						  					</label>
+						  				</div>
+						  			</ul>
+						  		</div>
+						  	</div>
+						  </div>
+
+							<div class="accordion-item">
+						  	<div class="accordion-header" id="headingThree">
+						  		<div class="form-check">
+						  			<input class="form-check-input selectAllCheckboxesReportes" type="checkbox" value="" id="selectAllModulosReportes" checked>
+						  			<label class="form-check-label" for="selectAllModulosReportes">
+						  				Reportes
+						  			</label>
+						  		</div>
+						  		<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThreePermisosModulos" aria-expanded="true" aria-controls="collapseThreePermisosModulos"></button>
+						  	</div>
+						  	<div id="collapseThreePermisosModulos" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionPermisosModulos">
+						  		<div class="accordion-body">
+						  			<ul class="mb-0">
+						  				<div class="form-check">
+						  					<input class="form-check-input selectAllCheckboxesReportes" type="checkbox" value="" id="checkReportModuleOption1" checked>
+						  					<label class="form-check-label" for="checkReportModuleOption1">
+						  						Stock disponible
+						  					</label>
+						  				</div>
+						  				<div class="form-check">
+						  					<input class="form-check-input selectAllCheckboxesReportes" type="checkbox" value="" id="checkReportModuleOption2" checked>
+						  					<label class="form-check-label" for="checkReportModuleOption2">
+						  						Venta In House
+						  					</label>
+						  				</div>
+						  				<div class="form-check">
+						  					<input class="form-check-input selectAllCheckboxesReportes" type="checkbox" value="" id="checkReportModuleOption3" checked>
+						  					<label class="form-check-label" for="checkReportModuleOption3">
+						  						Cierre promotor
+						  					</label>
+						  				</div>
+											<div class="form-check">
+												<input class="form-check-input selectAllCheckboxesReportes" type="checkbox" value="" id="checkReportModuleOption4" checked>
+												<label class="form-check-label" for="checkReportModuleOption4">
+													Cierre promotor
+												</label>
+											</div>
+											<div class="form-check">
+												<input class="form-check-input selectAllCheckboxesReportes" type="checkbox" value="" id="checkReportModuleOption5" checked>
+												<label class="form-check-label" for="checkReportModuleOption5">
+													Activación promotor
+												</label>
+											</div>
+						  			</ul>
+						  		</div>
+						  	</div>
+						  </div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn button-ghost" data-bs-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn button-primary">Guardar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalPermisosModulosInhouseUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Administrar Permisos In House</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<div class="accordion accordion-checkbox" id="accordionPermisosModulosInhouse">
+							<div class="accordion-item">
+								<div class="accordion-header" id="headingOne">
+									<div class="form-check">
+										<input class="form-check-input selectAllCheckboxesInhouse" type="checkbox" value="" id="selectAllModulosInhouse" checked>
+										<label class="form-check-label" for="selectAllModulosInhouse">
+											Reportes
+										</label>
+									</div>
+									<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOnePermisosModulosInhouse" aria-expanded="true" aria-controls="collapseOnePermisosModulos"></button>
+								</div>
+								<div id="collapseOnePermisosModulosInhouse" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionPermisosModulosInhouse">
+									<div class="accordion-body">
+										<ul class="mb-0">
+											<div class="form-check">
+												<input class="form-check-input selectAllCheckboxesInhouse" type="checkbox" value="" id="checkVentaModuleOption1" checked>
+												<label class="form-check-label" for="checkVentaModuleOption1">
+													Venta
+												</label>
+											</div>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn button-ghost" data-bs-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn button-primary">Guardar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalSuccess" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Datos Guardados</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<p class="d-flex align-items-center">
+							<span class="material-icons success-color marginRight-1">
+								done
+							</span>
+							Los datos se guardaron de manera exitosa
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn button-primary showAdmninistracionUsuarios" data-bs-dismiss="modal">Aceptar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	<!-- Modal -->
+
+	<!-- Fin Modals -->
+
+	<!--   Bootstrap JS Files   -->
+	<script src="js/bootstrap/jquery.3.2.1.min.js"></script>
+	<script src="js/plugin/datatables/datatables.min.js"></script>
+	<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="js/plugin/chart.js/chart.min.js"></script>
+	<script src="js/charts.js"></script>
+	<script src="js/main.js"></script>
+
+
+</body>
+
+</html>
