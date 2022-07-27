@@ -42,10 +42,10 @@ btnToggle.addEventListener('click', function () {
 // Datatables
 $(document).ready(function () {
   $('#tableEjemplo').DataTable();
-  $('#tableUsuarios').DataTable();
+  $('#tableSalesSummary').DataTable();
 });
 
-$('.table').DataTable({
+$('.dtable').DataTable({
   // "scrollX": true,
   //para cambiar el lenguaje a español
   "language": {
