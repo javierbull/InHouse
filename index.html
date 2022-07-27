@@ -59,7 +59,7 @@
 								<h3 class="title-inhouse">
 									<span>Nombre Empresa</span> - <span>Dirección de la empresa</span>
 								</h3>
-								<button type="button" name="button" class="btn button-primary showCrearUsuarios">
+								<button type="button" name="button" class="btn button-primary showNuevaVenta">
 									Nueva venta
 								</button>
 							</div>
@@ -129,7 +129,7 @@
 						      <th scope="row">2</th>
 									<td><span class="tag-status tag-active">Aceptado</span></td>
 						      <td>Text</td>
-						      <td>46158546</td>
+						      <td>46158458</td>
 									<td>Sergio Perez</td>
 									<td>00000621</td>
 									<td>POS</td>
@@ -178,41 +178,52 @@
 	<!-- Modals -->
 
 	<!-- Modal -->
-		<div class="modal fade" id="modalCambiarContra" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-			<div class="modal-dialog">
+		<div class="modal fade" id="modalDetalleVenta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Cambio de Contraseña</h5>
+						<h5 class="modal-title" id="exampleModalLabel">Detalle de venta</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
+						<table class="table">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Código - Descripción</th>
+									<th scope="col">Cantidad</th>
+									<th scope="col">P. Unitario</th>
+									<th scope="col">Total</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>EFO01 - Entrada Full Online</td>
+									<td>1</td>
+									<td>S/ 9.50</td>
+									<td>S/ 9.50</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th>Monto Total</th>
+									<th>S/ 9.50</th>
+								</tr>
+							</tfoot>
+						</table>
 						<form>
 							<div class="form-group">
-								<label for="inputUser" class="form-label">Usuario</label>
-								<input type="text" class="form-control" id="inputUser" value="nlatifi" disabled>
+								<label for="inputEmailClient" class="form-label">Correo</label>
+								<input type="text" class="form-control" id="inputEmailClient" value="nicolaslatifi@gmail.com" disabled>
 							</div>
-							<div class="form-group">
-								<label for="inputUserName" class="form-label">Nombre</label>
-								<input type="text" class="form-control" id="inputUserName" value="Nicolas Latifi" disabled>
-							</div>
-							<div class="form-group">
-								<label for="inputUserPassword" class="form-label">Contraseña</label>
-								<input type="password" class="form-control" id="inputUserPassword" value="123456">
-							</div>
-							<div class="form-group">
-								<label for="inputUserPasswordNew" class="form-label">Nueva Contraseña</label>
-								<input type="password" class="form-control" id="inputUserPasswordNew">
-							</div>
-							<div class="form-group">
-								<label for="inputUserPasswordNewConfirm" class="form-label">Pepetir Nueva Contraseña</label>
-								<input type="password" class="form-control" id="inputUserPasswordNewConfirm">
-							</div>
-
 						</form>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn button-ghost" data-bs-dismiss="modal">Cerrar</button>
-						<button type="button" class="btn button-primary">Guardar</button>
+						<button type="button" class="btn button-primary" data-bs-dismiss="modal">Aceptar</button>
 					</div>
 				</div>
 			</div>

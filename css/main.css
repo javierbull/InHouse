@@ -812,7 +812,7 @@ div.dataTables_wrapper div.dataTables_info {
 
 .tag-danger {
   background-color: var(--danger-light);
-  color: var(--danger);
+  color: var(--danger-dark);
 }
 /* END TAGS */
 
