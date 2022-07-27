@@ -557,7 +557,7 @@ video {
 /* END LOGIN */
 
 .main-admin {
-  background-color: lavender;
+  /* background-color: lavender; */
   padding-top: 64px;
 }
 
@@ -802,12 +802,17 @@ div.dataTables_wrapper div.dataTables_info {
 
 .tag-active {
   background-color: var(--info-light);
-  color: var(--dark);
+  color: var(--info-dark);
 }
 
 .tag-inactive {
   background-color: var(--gray-light);
   color: var(--dark);
+}
+
+.tag-danger {
+  background-color: var(--danger-light);
+  color: var(--danger);
 }
 /* END TAGS */
 
@@ -940,13 +945,13 @@ div.dataTables_wrapper div.dataTables_info {
 }
 
 .header-inhouse {
-  background-color: lightblue;
+  /* background-color: lightblue; */
   padding-top: 1.5rem;
   margin-bottom: 1.5rem;
 }
 
 .header-title-top {
-  background-color: lightgreen;
+  /* background-color: lightgreen; */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -954,7 +959,7 @@ div.dataTables_wrapper div.dataTables_info {
 }
 
 .title-inhouse {
-  background-color: pink;
+  /* background-color: pink; */
   margin-bottom: 0;
 }
 /* END IN HOUSE */
