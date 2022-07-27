@@ -557,7 +557,7 @@ video {
 /* END LOGIN */
 
 .main-admin {
-  /* background-color: salmon; */
+  background-color: lavender;
   padding-top: 64px;
 }
 
@@ -933,14 +933,28 @@ div.dataTables_wrapper div.dataTables_info {
 }
 /* ACCORDION CHECKBOX */
 
-/* DASHBOARD */
-
-.card-chart {
-  /* height: 400px; */
+/* IN HOUSE */
+.container-fluid {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-.card-chart canvas {
-  /* background-color: pink; */
-  height: 400px !important;
+.header-inhouse {
+  background-color: lightblue;
+  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
 }
-/* END DASHBOARD */
+
+.header-title-top {
+  background-color: lightgreen;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.title-inhouse {
+  background-color: pink;
+  margin-bottom: 0;
+}
+/* END IN HOUSE */
