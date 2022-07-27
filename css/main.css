@@ -186,6 +186,10 @@ h3 {
   padding-top: 1rem;
 }
 
+.paddingTop-1-5 {
+  padding-top: 1.5rem;
+}
+
 .paddingTop-2 {
   padding-top: 2rem;
 }
@@ -712,6 +716,10 @@ video {
 
 .action-cell .btn {
   margin-right: .5rem;
+}
+
+tfoot {
+
 }
 
 /* Pagination color */

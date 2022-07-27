@@ -69,98 +69,16 @@ $('.dtable').DataTable({
 // End datatables
 
 // SHOW HIDE panels
-$(".showDashboard").click(function() {
-  $("#dashboard-panel").show();
-  $("#usuarios-panel").hide();
-  $("#crearUsuarios-panel").hide();
+$(".showNuevaVenta").click(function() {
+  $("#sale-panel").show();
+  $("#home-panel").hide();
 });
 
-$(".showAdmninistracionUsuarios").click(function() {
-  $("#dashboard-panel").hide();
-  $("#usuarios-panel").show();
-  $("#crearUsuarios-panel").hide();
-});
-
-$(".showCrearUsuarios").click(function() {
-  $("#dashboard-panel").hide();
-  $("#usuarios-panel").hide();
-  $("#crearUsuarios-panel").show();
+$(".showHome").click(function() {
+  $("#sale-panel").hide();
+  $("#home-panel").show();
 });
 // END SHOW HIDE PANELS
 
-// SHOW FORMS CERAR Usuario
-$('#radioTypeUserInhouse').click(function(){
-  $("#fieldset-userInhouse").show();
-  $("#fieldset-userAdmin").hide();
-  $("#fieldset-formNewUserCloud").hide();
-  $("#fieldset-formNewUserValidador").hide();
-  $(".selectFalse").prop("checked", false);
-});
-
-$('#radioTypeUserAdmin').click(function(){
-  $("#fieldset-userInhouse").hide();
-  $("#fieldset-userAdmin").show();
-});
-
-$("#checkUserCloud").click(function () {
-    if ($(this).is(":checked")) {
-        $("#fieldset-formNewUserCloud").show();
-    } else {
-        $("#fieldset-formNewUserCloud").hide();
-    }
-});
-
-$("#checkUserValidador").click(function () {
-    if ($(this).is(":checked")) {
-        $("#fieldset-formNewUserValidador").show();
-    } else {
-        $("#fieldset-formNewUserValidador").hide();
-    }
-});
-// END SHOW FORMS CERAR USUARIO
-
-// SELECT ALL CHECKBOXES
-$("#selectAllModulosAdministracion").click(function() {
-  $(".selectAllCheckboxesAdministracion").prop("checked", $(this).prop("checked"));
-});
-
-$(".selectAllCheckboxesAdministracion").click(function() {
-  if (!$(this).prop("checked")) {
-    $("#selectAllModulosAdministracion").prop("checked", false);
-  }
-});
-
-$("#selectAllModulosOperaciones").click(function() {
-  $(".selectAllCheckboxesOperaciones").prop("checked", $(this).prop("checked"));
-});
-
-$(".selectAllCheckboxesOperaciones").click(function() {
-  if (!$(this).prop("checked")) {
-    $("#selectAllModulosOperaciones").prop("checked", false);
-  }
-});
-
-$("#selectAllModulosReportes").click(function() {
-  $(".selectAllCheckboxesReportes").prop("checked", $(this).prop("checked"));
-});
-
-$(".selectAllCheckboxesReportes").click(function() {
-  if (!$(this).prop("checked")) {
-    $("#selectAllModulosReportes").prop("checked", false);
-  }
-});
-
-$("#selectAllModulosInhouse").click(function() {
-  $(".selectAllCheckboxesInhouse").prop("checked", $(this).prop("checked"));
-});
-
-$(".selectAllCheckboxesInhouse").click(function() {
-  if (!$(this).prop("checked")) {
-    $("#selectAllModulosInhouse").prop("checked", false);
-  }
-});
-// END SELECT ALL CHECKBOXES
-
-// CHECKBOX ACCORDION
 
 });
