@@ -16,6 +16,8 @@
 	<!-- CSS Files -->
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="js/plugin/select2/select2.min.css">
+	<link rel="stylesheet" href="js/plugin/select2/select2-bootstrap-5-theme.min.css">
 	<link rel="stylesheet" href="css/datatables.min.css">
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/mq.css">
@@ -193,11 +195,13 @@
 									search
 								</span>
 							</button>
-							<select class="form-select form-select-search" id="inputGroupSelect04" aria-label="Example select with button addon">
-								<option selected>Buscar</option>
-								<option value="1">One</option>
-								<option value="2">Two</option>
-								<option value="3">Three</option>
+							<select class="form-select form-select-search" id="single-select-field" data-placeholder="Choose one thing">
+								<option></option>
+								<option>Reactive</option>
+								<option>Solution</option>
+								<option>Conglomeration</option>
+								<option>Algoritm</option>
+								<option>Holistic</option>
 							</select>
 							<button class="btn button-icon" type="button">
 								<span class="material-icons-outlined">
@@ -300,6 +304,7 @@
 	<script src="js/bootstrap/jquery.3.2.1.min.js"></script>
 	<script src="js/plugin/datatables/datatables.min.js"></script>
 	<script src="js/bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="js/plugin/select2/select2.min.js"></script>
 	<script src="js/main.js"></script>
 
 
