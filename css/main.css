@@ -263,6 +263,13 @@ h3 {
   box-shadow: none;
 }
 
+.button-link-icon {
+  /* background-color: lavender; */
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+
 .button-outline {
   background-color: var(--white);
   background-color: none;
@@ -359,7 +366,7 @@ h3 {
 .button-icon:focus {
   color: var(--dark);
   background-color: none;
-  box-shadow: 0 0 0 0.25rem rgba(20, 20, 43, 0.25);
+  box-shadow: none;
 }
 
 .button-icon-sm {
@@ -820,6 +827,11 @@ div.dataTables_wrapper div.dataTables_info {
   color: var(--dark);
 }
 
+.tag-success {
+  background-color: var(--success-light);
+  color: var(--success-dark);
+}
+
 .tag-danger {
   background-color: var(--danger-light);
   color: var(--danger-dark);
@@ -831,6 +843,8 @@ div.dataTables_wrapper div.dataTables_info {
 .breadcrumb {
   margin-bottom: 1.5rem;
 }
+
+
 /* END BREADCRUMB */
 
 /* CARD */
@@ -973,4 +987,29 @@ div.dataTables_wrapper div.dataTables_info {
   margin-bottom: 0;
   margin-right: 2rem;
 }
+
+.form-group-title {
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.input-search {
+  /* background-color: lavender; */
+  border: 1px solid #ced4da;
+  overflow: hidden;
+  border-radius: .25rem;
+}
+
+.form-select-search {
+  /* background-color: pink; */
+  border: none;
+}
+
+.form-select-search:focus {
+  /* background-color: pink; */
+  border: none;
+  box-shadow: none;
+}
+
+
 /* END IN HOUSE */

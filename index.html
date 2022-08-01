@@ -110,7 +110,7 @@
 						  <tbody>
 						    <tr>
 						      <th scope="row">3</th>
-									<td><span class="tag-status tag-active">Aceptado</span></td>
+									<td><span class="tag-status tag-success">Aceptado</span></td>
 						      <td>Text</td>
 						      <td>46158745</td>
 									<td>Nicolas Latifi</td>
@@ -127,7 +127,7 @@
 						    </tr>
 								<tr>
 						      <th scope="row">2</th>
-									<td><span class="tag-status tag-active">Aceptado</span></td>
+									<td><span class="tag-status tag-success">Aceptado</span></td>
 						      <td>Text</td>
 						      <td>46158458</td>
 									<td>Sergio Perez</td>
@@ -172,12 +172,42 @@
 					<div class="col">
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb paddingTop-1-5">
-								<li class="breadcrumb-item showHome"><a href="#" class="button-link">Regresar</a></li>
+								<li class="breadcrumb-item showHome">
+									<a href="#" class="button-link button-link-icon">
+										<span class="material-icons-outlined me-1">
+											arrow_back
+										</span>
+										Regresar
+									</a></li>
 								<li class="breadcrumb-item active" aria-current="page">Nueva venta</li>
 							</ol>
 						</nav>
 					</div>
-				</div>
+
+					<form>
+						<div class="col form-group">
+							<label for="inputGroupSelect04" class="form-label">Nombre Cliente / Nro. Doc</label>
+							<div class="input-group input-search">
+							<button class="btn button-icon" type="button">
+								<span class="material-icons-outlined">
+									search
+								</span>
+							</button>
+							<select class="form-select form-select-search" id="inputGroupSelect04" aria-label="Example select with button addon">
+								<option selected>Buscar</option>
+								<option value="1">One</option>
+								<option value="2">Two</option>
+								<option value="3">Three</option>
+							</select>
+							<button class="btn button-icon" type="button">
+								<span class="material-icons-outlined">
+									close
+								</span>
+							</button>
+						</div>
+						</div>
+
+					</form>
 			</div>
 
 		</div>
