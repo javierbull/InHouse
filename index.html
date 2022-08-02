@@ -543,13 +543,17 @@
 					</div>
 					<div class="modal-body">
 						<form>
+							<div class="alert info-alert marginBottom-1" role="alert">
+							  Todos los campos con (<span class="danger-color">*</span>) son obligatorios
+							</div>
+
 							<div class="row">
 								<div class="col form-group">
-									<label for="inputEditClientName" class="form-label">Nombre</label>
+									<label for="inputEditClientName" class="form-label">Nombre <span>*</span></label>
 									<input type="text" class="form-control" id="inputEditClientName" value="Nicolas">
 								</div>
 								<div class="col form-group">
-									<label for="inputEditClientLastName" class="form-label">Apellido Paterno</label>
+									<label for="inputEditClientLastName" class="form-label">Apellido Paterno <span>*</span></label>
 									<input type="text" class="form-control" id="inputEditClientLastName" value="Latifi">
 								</div>
 							</div>
@@ -567,14 +571,14 @@
 
 							<div class="row">
 								<div class="col form-group">
-									<label for="inputEditClientEmail" class="form-label">Correo</label>
+									<label for="inputEditClientEmail" class="form-label">Correo <span>*</span></label>
 									<input type="email" class="form-control" id="inputEditClientEmail" value="nicolaslatifi@gmail.com">
 								</div>
 							</div>
 
 							<div class="row">
 								<div class="col form-group">
-									<label for="inputEditClientTypeId" class="form-label">Documento</label>
+									<label for="inputEditClientTypeId" class="form-label">Documento <span>*</span></label>
 									<select class="form-select" id="inputEditClientTypeId" disabled>
 									  <option selected>DNI</option>
 									  <option value="1">CE</option>
@@ -582,7 +586,7 @@
 								</div>
 
 								<div class="col form-group">
-									<label for="inputEditClientId" class="form-label">Número</label>
+									<label for="inputEditClientId" class="form-label">Número <span>*</span></label>
 									<input type="number" class="form-control" id="inputEditClientId" value="45468658" disabled>
 								</div>
 							</div>

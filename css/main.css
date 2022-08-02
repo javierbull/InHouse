@@ -212,7 +212,18 @@ h4 {
 .success-color {
   color: var(--success);
 }
+
+.danger-color {
+  color: var(--danger);
+}
 /* End Colors */
+
+/* ALERTS */
+.info-alert {
+  background-color: var(--info-light);
+  color: var(--info-dark);
+}
+/* END ALERTS */
 
 /* Buttons */
 .btn {
@@ -549,6 +560,10 @@ video {
 .form-group label {
   color: var(--gray);
   margin-bottom: .25rem;
+}
+
+.form-group label span {
+  color: var(--danger);
 }
 
 .form-control:focus {
@@ -1054,6 +1069,5 @@ div.dataTables_wrapper div.dataTables_info {
 .fieldset-producto>div:last-child {
   margin-bottom: 0;
 }
-
 
 /* END IN HOUSE */
