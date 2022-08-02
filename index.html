@@ -187,10 +187,10 @@
 					</div>
 
 					<form>
-						<fieldset class="fieldset-clientes marginBottom-1-5">
+						<fieldset class="fieldset-clientes fieldset-venta marginBottom-1-5">
 							<h4 class="marginBottom-1">Clientes</h4>
 							<div class="d-flex align-items-end">
-								<div class="form-group mb-0">
+								<div class="form-group">
 									<label for="inputGroupSelect04" class="form-label">Nombre Cliente / Nro. Doc</label>
 									<div class="input-group input-search">
 										<button class="btn button-icon" type="button">
@@ -214,13 +214,13 @@
 									</div>
 								</div>
 
-								<button type="button" name="button" class="btn button-primary button-icon ms-3">
+								<button type="button" name="button" class="btn button-primary button-icon me-3">
 									<span class="material-icons">
 										person_add
 									</span>
 								</button>
 
-								<button type="button" name="button" class="btn button-outline-icon ms-3">
+								<button type="button" name="button" class="btn button-outline-icon">
 									<span class="material-icons">
 										edit
 									</span>
@@ -229,10 +229,13 @@
 							</div>
 						</fieldset>
 
-						<fieldset class="marginBottom-1-5">
+
+
+						<fieldset class="fieldset-venta marginBottom-1-5">
 							<h4 class="marginBottom-1">Agregar Productos</h4>
-							<div class="row">
-								<div class="col-md-3 form-group">
+
+							<div class="d-flex align-items-end">
+								<div class="col-md-6 form-group">
 									<label for="inputBusiness" class="form-label">Código / Descripción producto</label>
 									<select class="form-select" id="select-products" data-placeholder="Buscar">
 										<option></option>
@@ -242,26 +245,45 @@
 									</select>
 								</div>
 
-								<div class="col-md-3 form-group">
-									<label for="inputSubBusiness" class="form-label">Sub-Línea de Negocio</label>
-									<input type="text" class="form-control" id="inputSubBusiness" value="Bee Beneficios - Todas" disabled>
+								<div class="col form-group">
+									<label for="inputProductQuantity" class="form-label">Cantidad</label>
+									<input type="number" class="form-control" id="inputProductQuantity" value="1">
 								</div>
 
-								<div class="col-md-3 form-group">
-									<label for="inputSerie" class="form-label">Serie</label>
-									<input type="text" class="form-control" id="inputSerie" value="BBB5" disabled>
+								<div class="col form-group">
+									<label for="inputUmed" class="form-label">U. Med.</label>
+									<input type="text" class="form-control" id="inputUmed" value="NIU" disabled>
 								</div>
 
-								<div class="col-md-1 form-group">
-									<label for="inputCurrency" class="form-label">Moneda</label>
-									<input type="text" class="form-control" id="inputCurrency" value="S/." disabled>
+								<div class="col form-group">
+									<label for="inputUnitPrice" class="form-label">P. Unit.</label>
+									<input type="date" class="form-control" id="inputUnitPrice" value = "9.50" disabled>
 								</div>
 
-								<div class="col-md-2 form-group">
-									<label for="inputDate" class="form-label">F. Emisión</label>
-									<input type="date" class="form-control" id="inputDate" value = "2022-07-28" disabled>
+								<div class="col form-group">
+									<label for="inputDsct" class="form-label">% Dscto.</label>
+									<input type="date" class="form-control" id="inputDsct" value = "0" disabled>
 								</div>
+
+								<div class="col form-group">
+									<label for="inputProductQuantityTotal" class="form-label">Total</label>
+									<input type="number" class="form-control" id="inputProductQuantityTotal" value="9.50" disabled>
+								</div>
+
+								<button type="button" name="button" class="btn button-primary button-icon">
+									<span class="material-icons-outlined">
+										add
+									</span>
+								</button>
+
+								<button type="button" name="button" class="btn button-danger button-icon ms-3">
+									<span class="material-icons-outlined">
+										delete_forever
+									</span>
+								</button>
 							</div>
+
+
 						</fieldset>
 
 					</form>
