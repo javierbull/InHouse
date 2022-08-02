@@ -268,7 +268,7 @@
 									<input type="number" class="form-control" id="inputProductQuantityTotal" value="9.50" disabled>
 								</div>
 
-								<button type="button" name="button" class="btn button-danger button-icon ms-3">
+								<button type="button" name="button" class="btn button-danger button-icon">
 									<span class="material-icons-outlined">
 										delete_forever
 									</span>
@@ -311,7 +311,7 @@
 									<input type="number" class="form-control" id="inputProductQuantityTotal" value="0.00" disabled>
 								</div>
 
-								<button type="button" name="button" class="btn button-primary button-icon ms-3">
+								<button type="button" name="button" class="btn button-primary button-icon">
 									<span class="material-icons-outlined">
 										add
 									</span>
@@ -347,8 +347,24 @@
 							</div>
 						</fieldset>
 
-						<fieldset class="fieldset-venta fieldset-resumen">
+						<fieldset class="fieldset-resumen">
+							<div class="d-flex justify-content-between">
+								<div class="col-md-6 form-group">
+									<label for="message-text" class="form-label">Observaciones (Opcional)</label>
+									<textarea class="form-control" id="message-text" rows="3"></textarea>
+								</div>
 
+								<div class="content-total">
+									<div class="col form-group">
+										<label for="inputProductTotalQuantity" class="form-label">Importe total</label>
+										<input type="number" class="form-control" id="inputProductTotalQuantity" value="9.50" disabled>
+									</div>
+
+									<button type="button" name="button" class="btn button-primary button-block">
+										Emitir Boleta
+									</button>
+								</div>
+							</div>
 						</fieldset>
 
 					</form>
