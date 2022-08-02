@@ -447,7 +447,7 @@
 						</p>
 					</div>
 					<div class="modal-footer">
-						<button type="button" class="btn button-primary showAdmninistracionUsuarios" data-bs-dismiss="modal">Aceptar</button>
+						<button type="button" class="btn button-primary" data-bs-dismiss="modal">Aceptar</button>
 					</div>
 				</div>
 			</div>
@@ -506,7 +506,29 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn button-ghost" data-bs-dismiss="modal">Cerrar</button>
-						<button type="button" class="btn button-primary">Confirmar</button>
+						<button type="button" class="btn button-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalSuccessSale">Confirmar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalSuccessSale" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Venta exitosa</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<p class="d-flex align-items-center">
+							<span class="material-icons success-color marginRight-1">
+								done
+							</span>
+							La venta se realizó de manera exitosa
+						</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn button-primary showHome" data-bs-dismiss="modal">Aceptar</button>
 					</div>
 				</div>
 			</div>
