@@ -171,7 +171,7 @@
 		<div class="panel" id="sale-panel">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col">
+					<div class="col marginBottom-1-5">
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb paddingTop-1-5">
 								<li class="breadcrumb-item showHome">
@@ -187,29 +187,82 @@
 					</div>
 
 					<form>
-						<div class="col form-group">
-							<label for="inputGroupSelect04" class="form-label">Nombre Cliente / Nro. Doc</label>
-							<div class="input-group input-search">
-								<button class="btn button-icon" type="button">
-									<span class="material-icons-outlined">
-										search
+						<fieldset class="fieldset-clientes marginBottom-1-5">
+							<h4 class="marginBottom-1">Clientes</h4>
+							<div class="d-flex align-items-end">
+								<div class="form-group mb-0">
+									<label for="inputGroupSelect04" class="form-label">Nombre Cliente / Nro. Doc</label>
+									<div class="input-group input-search">
+										<button class="btn button-icon" type="button">
+											<span class="material-icons-outlined">
+												search
+											</span>
+										</button>
+										<select class="form-select" id="search-clients" data-placeholder="Buscar">
+											<option></option>
+											<option>Albon Alexander - 45698547</option>
+											<option>Bustamante Diego - 69854712</option>
+											<option>Cáceres María - 49652564</option>
+											<option>Cruz Mario - 42569842</option>
+											<option>Solis Marina - 56892541</option>
+										</select>
+										<button class="btn button-icon" type="button">
+											<span class="material-icons-outlined">
+												close
+											</span>
+										</button>
+									</div>
+								</div>
+
+								<button type="button" name="button" class="btn button-primary button-icon ms-3">
+									<span class="material-icons">
+										person_add
 									</span>
 								</button>
-								<select class="form-select" id="single-select-field" data-placeholder="Buscar">
-									<option></option>
-									<option>Reactive</option>
-									<option>Solution</option>
-									<option>Conglomeration</option>
-									<option>Algoritm</option>
-									<option>Holistic</option>
-								</select>
-								<button class="btn button-icon" type="button">
-									<span class="material-icons-outlined">
-										close
+
+								<button type="button" name="button" class="btn button-outline-icon ms-3">
+									<span class="material-icons">
+										edit
 									</span>
 								</button>
+
 							</div>
-						</div>
+						</fieldset>
+
+						<fieldset class="marginBottom-1-5">
+							<h4 class="marginBottom-1">Agregar Productos</h4>
+							<div class="row">
+								<div class="col-md-3 form-group">
+									<label for="inputBusiness" class="form-label">Código / Descripción producto</label>
+									<select class="form-select" id="select-products" data-placeholder="Buscar">
+										<option></option>
+										<option>EFO - Entrada Full Online</option>
+										<option>EPO - Entrada Plus Online</option>
+										<option>EEO - Entrada Estándar Online</option>
+									</select>
+								</div>
+
+								<div class="col-md-3 form-group">
+									<label for="inputSubBusiness" class="form-label">Sub-Línea de Negocio</label>
+									<input type="text" class="form-control" id="inputSubBusiness" value="Bee Beneficios - Todas" disabled>
+								</div>
+
+								<div class="col-md-3 form-group">
+									<label for="inputSerie" class="form-label">Serie</label>
+									<input type="text" class="form-control" id="inputSerie" value="BBB5" disabled>
+								</div>
+
+								<div class="col-md-1 form-group">
+									<label for="inputCurrency" class="form-label">Moneda</label>
+									<input type="text" class="form-control" id="inputCurrency" value="S/." disabled>
+								</div>
+
+								<div class="col-md-2 form-group">
+									<label for="inputDate" class="form-label">F. Emisión</label>
+									<input type="date" class="form-control" id="inputDate" value = "2022-07-28" disabled>
+								</div>
+							</div>
+						</fieldset>
 
 					</form>
 			</div>

@@ -67,6 +67,11 @@ h3 {
   font-weight: 700;
 }
 
+h4 {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
 .body-bold {
   font-size: 1rem;
   font-weight: 700;
@@ -298,10 +303,6 @@ h3 {
   border-color: 1px solid var(--dark);
 }
 
-.button-outline-icon span {
-  margin-right: .5rem;
-}
-
 .button-outline-icon:hover {
   background-color: var(--dark);
   color: var(--white);
@@ -351,22 +352,9 @@ h3 {
 }
 
 .button-icon {
-  color: var(--dark);
-  background-color: none;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.button-icon:hover {
-  color: var(--dark);
-  background-color: var(--gray-light);
-}
-
-.button-icon:focus {
-  color: var(--dark);
-  background-color: none;
-  box-shadow: none;
 }
 
 .button-icon-sm {
@@ -1031,5 +1019,10 @@ div.dataTables_wrapper div.dataTables_info {
   border: 1px solid #ced4da;
   border-radius: 0.25rem;
 }
+
+.fieldset-clientes .form-group {
+  width: 100%;
+}
+
 
 /* END IN HOUSE */
