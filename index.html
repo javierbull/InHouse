@@ -220,7 +220,7 @@
 									</span>
 								</button>
 
-								<button type="button" name="button" class="btn button-outline-icon">
+								<button type="button" name="button" class="btn button-outline-icon" data-bs-toggle="modal" data-bs-target="#modalEditClient">
 									<span class="material-icons">
 										edit
 									</span>
@@ -533,6 +533,69 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="modal fade" id="modalEditClient" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Editar ciente</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="row">
+								<div class="col form-group">
+									<label for="inputEditClientName" class="form-label">Nombre</label>
+									<input type="text" class="form-control" id="inputEditClientName" value="Nicolas">
+								</div>
+								<div class="col form-group">
+									<label for="inputEditClientLastName" class="form-label">Apellido Paterno</label>
+									<input type="text" class="form-control" id="inputEditClientLastName" value="Latifi">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col form-group">
+									<label for="inputEditClientMothersLastName" class="form-label">Apellido Materno</label>
+									<input type="text" class="form-control" id="inputEditClientMothersLastName" value="Albon">
+								</div>
+
+								<div class="col form-group">
+									<label for="inputEditClientPhone" class="form-label">Celular</label>
+									<input type="text" class="form-control" id="inputEditClientPhone" value="933 254 879">
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col form-group">
+									<label for="inputEditClientEmail" class="form-label">Correo</label>
+									<input type="email" class="form-control" id="inputEditClientEmail" value="nicolaslatifi@gmail.com">
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col form-group">
+									<label for="inputEditClientTypeId" class="form-label">Documento</label>
+									<select class="form-select" id="inputEditClientTypeId" disabled>
+									  <option selected>DNI</option>
+									  <option value="1">CE</option>
+									</select>
+								</div>
+
+								<div class="col form-group">
+									<label for="inputEditClientId" class="form-label">Número</label>
+									<input type="number" class="form-control" id="inputEditClientId" value="45468658" disabled>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn button-ghost" data-bs-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn button-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalSuccess">Guardar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	<!-- Modal -->
 
 	<!-- Fin Modals -->
