@@ -234,10 +234,53 @@
 						<fieldset class="fieldset-venta marginBottom-1-5">
 							<h4 class="marginBottom-1">Agregar Productos</h4>
 
-							<div class="d-flex align-items-end">
+							<div class="d-flex align-items-end marginBottom-1-5">
 								<div class="col-md-6 form-group">
 									<label for="inputBusiness" class="form-label">Código / Descripción producto</label>
 									<select class="form-select" id="select-products" data-placeholder="Buscar">
+										<option></option>
+										<option selected>EFO - Entrada Full Online</option>
+										<option>EPO - Entrada Plus Online</option>
+										<option>EEO - Entrada Estándar Online</option>
+									</select>
+								</div>
+
+								<div class="col form-group">
+									<label for="inputProductQuantity" class="form-label">Cantidad</label>
+									<input type="number" class="form-control" id="inputProductQuantity" value="1">
+								</div>
+
+								<div class="col form-group">
+									<label for="inputUmed" class="form-label">U. Med.</label>
+									<input type="text" class="form-control" id="inputUmed" value="NIU" disabled>
+								</div>
+
+								<div class="col form-group">
+									<label for="inputUnitPrice" class="form-label">P. Unit.</label>
+									<input type="number" class="form-control" id="inputUnitPrice" value = "9.50" disabled>
+								</div>
+
+								<div class="col form-group">
+									<label for="inputDsct" class="form-label">% Dscto.</label>
+									<input type="number" class="form-control" id="inputDsct" value = "0" disabled>
+								</div>
+
+								<div class="col form-group">
+									<label for="inputProductQuantityTotal" class="form-label">Total</label>
+									<input type="number" class="form-control" id="inputProductQuantityTotal" value="9.50" disabled>
+								</div>
+
+								<button type="button" name="button" class="btn button-danger button-icon ms-3">
+									<span class="material-icons-outlined">
+										delete_forever
+									</span>
+								</button>
+							</div>
+
+							<div class="d-flex align-items-end marginBottom-1-5">
+								<div class="col-md-6 form-group">
+									<label for="inputBusiness" class="form-label">Código / Descripción producto</label>
+									<select class="form-select" id="select-products2" data-placeholder="Buscar">
 										<option></option>
 										<option>EFO - Entrada Full Online</option>
 										<option>EPO - Entrada Plus Online</option>
@@ -257,33 +300,25 @@
 
 								<div class="col form-group">
 									<label for="inputUnitPrice" class="form-label">P. Unit.</label>
-									<input type="date" class="form-control" id="inputUnitPrice" value = "9.50" disabled>
+									<input type="number" class="form-control" id="inputUnitPrice" value = "0.00" disabled>
 								</div>
 
 								<div class="col form-group">
 									<label for="inputDsct" class="form-label">% Dscto.</label>
-									<input type="date" class="form-control" id="inputDsct" value = "0" disabled>
+									<input type="number" class="form-control" id="inputDsct" value = "0" disabled>
 								</div>
 
 								<div class="col form-group">
 									<label for="inputProductQuantityTotal" class="form-label">Total</label>
-									<input type="number" class="form-control" id="inputProductQuantityTotal" value="9.50" disabled>
+									<input type="number" class="form-control" id="inputProductQuantityTotal" value="0.00" disabled>
 								</div>
 
-								<button type="button" name="button" class="btn button-primary button-icon">
+								<button type="button" name="button" class="btn button-primary button-icon ms-3">
 									<span class="material-icons-outlined">
 										add
 									</span>
 								</button>
-
-								<button type="button" name="button" class="btn button-danger button-icon ms-3">
-									<span class="material-icons-outlined">
-										delete_forever
-									</span>
-								</button>
 							</div>
-
-
 						</fieldset>
 
 					</form>
