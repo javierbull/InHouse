@@ -360,7 +360,7 @@
 										<input type="number" class="form-control" id="inputProductTotalQuantity" value="9.50" disabled>
 									</div>
 
-									<button type="button" name="button" class="btn button-primary button-block">
+									<button type="button" name="button" class="btn button-primary button-block" data-bs-toggle="modal" data-bs-target="#modalResumenVenta">
 										Emitir Boleta
 									</button>
 								</div>
@@ -448,6 +448,65 @@
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn button-primary showAdmninistracionUsuarios" data-bs-dismiss="modal">Aceptar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalResumenVenta" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Confirmación de venta</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<table class="table marginBottom-1">
+							<thead>
+								<tr>
+									<th scope="col">#</th>
+									<th scope="col">Código - Descripción</th>
+									<th scope="col">Cantidad</th>
+									<th scope="col">P. Unitario</th>
+									<th scope="col">Total</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">1</th>
+									<td>EFO01 - Entrada Full Online</td>
+									<td>1</td>
+									<td>S/ 9.50</td>
+									<td>S/ 9.50</td>
+								</tr>
+								<tr>
+									<th scope="row">2</th>
+									<td>EEO01 - Entrada Estándar Online</td>
+									<td>1</td>
+									<td>S/ 7.50</td>
+									<td>S/ 7.50</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th>Monto Total</th>
+									<th>S/ 17.00</th>
+								</tr>
+							</tfoot>
+						</table>
+						<form>
+							<div class="form-group">
+								<label for="inputEmailClient" class="form-label">Correo</label>
+								<input type="text" class="form-control" id="inputEmailClient" value="nicolaslatifi@gmail.com">
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn button-ghost" data-bs-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn button-primary">Confirmar</button>
 					</div>
 				</div>
 			</div>
