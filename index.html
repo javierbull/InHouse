@@ -214,7 +214,7 @@
 									</div>
 								</div>
 
-								<button type="button" name="button" class="btn button-primary button-icon me-3">
+								<button type="button" name="button" class="btn button-primary button-icon me-3" data-bs-toggle="modal" data-bs-target="#modalAddClient">
 									<span class="material-icons">
 										person_add
 									</span>
@@ -538,7 +538,7 @@
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="exampleModalLabel">Editar ciente</h5>
+						<h5 class="modal-title" id="exampleModalLabel">Editar cliente</h5>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
 					<div class="modal-body">
@@ -588,6 +588,72 @@
 								<div class="col form-group">
 									<label for="inputEditClientId" class="form-label">Número <span>*</span></label>
 									<input type="number" class="form-control" id="inputEditClientId" value="45468658" disabled>
+								</div>
+							</div>
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn button-ghost" data-bs-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn button-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalSuccess">Guardar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalAddClient" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Agregar cliente</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<form>
+							<div class="alert info-alert marginBottom-1" role="alert">
+							  Todos los campos con (<span class="danger-color">*</span>) son obligatorios
+							</div>
+
+							<div class="row">
+								<div class="col form-group">
+									<label for="inputAddClientName" class="form-label">Nombre <span>*</span></label>
+									<input type="text" class="form-control" id="inputAddClientName">
+								</div>
+								<div class="col form-group">
+									<label for="inputEditClAddLastName" class="form-label">Apellido Paterno <span>*</span></label>
+									<input type="text" class="form-control" id="inputAddClientLastName">
+								</div>
+							</div>
+							<div class="row">
+								<div class="col form-group">
+									<label for="inputAddClientMothersLastName" class="form-label">Apellido Materno</label>
+									<input type="text" class="form-control" id="inputAddClientMothersLastName">
+								</div>
+
+								<div class="col form-group">
+									<label for="inputAddClientPhone" class="form-label">Celular</label>
+									<input type="text" class="form-control" id="inputAddClientPhone">
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col form-group">
+									<label for="inputAddClientEmail" class="form-label">Correo <span>*</span></label>
+									<input type="email" class="form-control" id="inputAddClientEmail">
+								</div>
+							</div>
+
+							<div class="row">
+								<div class="col form-group">
+									<label for="inputAddClientTypeId" class="form-label">Documento <span>*</span></label>
+									<select class="form-select" id="inputAddClientTypeId">
+									  <option selected>DNI</option>
+									  <option value="1">CE</option>
+									</select>
+								</div>
+
+								<div class="col form-group">
+									<label for="inputAddClientId" class="form-label">Número <span>*</span></label>
+									<input type="number" class="form-control" id="inputAddClientId">
 								</div>
 							</div>
 						</form>
