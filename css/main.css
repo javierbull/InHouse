@@ -1093,7 +1093,7 @@ div.dataTables_wrapper div.dataTables_info {
   justify-content: center;
   align-items: center;
   padding: 1.5rem;
-  background-color: rgba(20, 20, 43, .6);
+  background-color: rgba(20, 20, 43, .7);
   width:100%;
   height: 100%;
   position: fixed;
@@ -1102,7 +1102,7 @@ div.dataTables_wrapper div.dataTables_info {
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 1055;
-  display: none;
+  /* display: none; */
 }
 
 .loader img {
