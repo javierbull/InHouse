@@ -707,6 +707,10 @@ video {
 }
 
 /* TABLES */
+.table {
+  font-size: .875rem;
+}
+
 .card-dtable {
   background-color: var(--white);
   padding: 1.5rem;
@@ -752,7 +756,7 @@ video {
 }
 
 tfoot {
-
+  font-size: 1rem;
 }
 
 /* Pagination color */
@@ -1102,7 +1106,7 @@ div.dataTables_wrapper div.dataTables_info {
   overflow-x: hidden;
   overflow-y: auto;
   z-index: 1055;
-  /* display: none; */
+  display: none;
 }
 
 .loader img {
