@@ -596,6 +596,7 @@ video {
 .main-admin {
   /* background-color: lavender; */
   padding-top: 64px;
+  padding-bottom: 24px;
 }
 
 /* Sidebar */
