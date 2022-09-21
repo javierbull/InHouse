@@ -175,6 +175,7 @@
 						<div class="alert info-alert marginTop-1-5" role="alert">
 							Los productos de <span>Cineplanet</span> y <span>Rokys</span> se encuentran en Proceso de Carga
 						</div>
+
 						<nav aria-label="breadcrumb">
 							<ol class="breadcrumb paddingTop-0-5">
 								<li class="breadcrumb-item showHome">
@@ -745,6 +746,39 @@
 					<div class="modal-footer">
 						<button type="button" class="btn button-primary">Confirmar</button>
 						<button type="button" class="btn button-ghost" data-bs-dismiss="modal">Cerrar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalClienteOtraEmpresa" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Cliente registrado en otra empresa</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+						<div class="d-flex">
+							<span class="material-icons warning-color marginRight-1">
+								warning
+							</span>
+							<p>
+								El cliente se encuentra registrado en <span class="body-semibold">Colmena Solutions</span>
+							</p>
+						</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="inlineRadioOptionsTipoDeVenta" id="inlineRadioTipoVentaCliente1" value="option3">
+								<label class="form-check-label" for="inlineRadioTipoVentaCliente1">Actualizar empresa del colaborador</label>
+							</div>
+							<div class="form-check">
+								<input class="form-check-input" type="radio" name="inlineRadioOptionsTipoDeVenta" id="inlineRadioTipoVentaCliente2" value="option3">
+								<label class="form-check-label" for="inlineRadioTipoVentaCliente2">Vender como cliente invitado</label>
+							</div>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn button-ghost" data-bs-dismiss="modal">Cerrar</button>
+						<button type="button" class="btn button-primary" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#modalSuccess" disabled>Guardar</button>
 					</div>
 				</div>
 			</div>
