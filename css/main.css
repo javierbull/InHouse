@@ -1089,6 +1089,10 @@ div.dataTables_wrapper div.dataTables_info {
   margin-right: 0;
 }
 
+.selected-event-product {
+  color: var(--success);
+}
+
 /* END IN HOUSE */
 
 /* LOADER */
